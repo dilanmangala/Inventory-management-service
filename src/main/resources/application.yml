@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: inventorymanagement
+  profiles:
+    active: {spring.profiles.active}
+  config:
+    import: optional:configserver:https://cloud-config-server-qortex-np-dev.apps.jlg94ui1wadd823f47.uaenorth.aroapp.io
+    properties:
+      hibernate:
+        format_sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
+springdoc:
+  swagger-ui:
+    enabled: true
+
